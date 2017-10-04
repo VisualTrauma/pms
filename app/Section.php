@@ -10,6 +10,7 @@ class Section extends Model
     /*
      * Available attributes:
      *
+     * company_id
      * department_id
      * code
      * description
@@ -20,5 +21,9 @@ class Section extends Model
 
     public function department() {
         return $this->belongsTo(Department::class);
+    }
+
+    public function company() {
+        return $this->belongsTo(Company::class);
     }
 }

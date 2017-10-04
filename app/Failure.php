@@ -10,6 +10,7 @@ class Failure extends Model
     /*
      * Available attributes:
      *
+     * company_id
      * code
      * description
      * added_by
@@ -19,5 +20,9 @@ class Failure extends Model
 
     public function workRequests() {
         return $this->hasMany(WorkRequest::class);
+    }
+
+    public function company() {
+        return $this->belongsTo(Company::class);
     }
 }

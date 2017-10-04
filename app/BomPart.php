@@ -10,6 +10,7 @@ class BomPart extends Model
     /*
      * Available attributes:
      *
+     * company_id
      * bill_of_material_id
      * number
      * description
@@ -23,5 +24,9 @@ class BomPart extends Model
 
     public function billOfMaterial() {
         return $this->hasMany(BillOfMaterial::class);
+    }
+
+    public function company() {
+        return $this->belongsTo(Company::class);
     }
 }

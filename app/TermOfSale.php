@@ -10,6 +10,7 @@ class TermOfSale extends Model
     /*
      * Available attributes:
      *
+     * company_id
      * type
      * added_by
      */
@@ -18,5 +19,9 @@ class TermOfSale extends Model
 
     public function purchaseOrders() {
         return $this->hasMany(PurchaseOrder::class);
+    }
+
+    public function company() {
+        return $this->belongsTo(Company::class);
     }
 }

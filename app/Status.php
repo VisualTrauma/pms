@@ -10,6 +10,7 @@ class Status extends Model
     /*
      * Available attributes:
      *
+     * company_id
      * added_by
      */
 
@@ -25,5 +26,9 @@ class Status extends Model
 
     public function assets() {
         return $this->hasMany(Asset::class);
+    }
+
+    public function company() {
+        return $this->belongsTo(Company::class);
     }
 }

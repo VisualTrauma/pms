@@ -10,6 +10,7 @@ class Criticality extends Model
     /*
      * Available attributes:
      *
+     * company_id
      * type
      * added_by
      */
@@ -18,5 +19,9 @@ class Criticality extends Model
 
     public function assets() {
         return $this->hasMany(Asset::class);
+    }
+
+    public function company() {
+        return $this->belongsTo(Company::class);
     }
 }

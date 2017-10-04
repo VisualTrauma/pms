@@ -10,6 +10,7 @@ class Plant extends Model
     /*
      * Available attributes:
      *
+     * company_id
      * code
      * description
      * added_by
@@ -19,5 +20,9 @@ class Plant extends Model
 
     public function departments() {
         return $this->hasMany(Department::class);
+    }
+
+    public function company() {
+        return $this->belongsTo(Company::class);
     }
 }

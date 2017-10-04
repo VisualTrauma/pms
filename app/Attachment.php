@@ -10,6 +10,7 @@ class Attachment extends Model
     /*
      * Available attributes:
      *
+     * company_id
      * supplier_id
      * filename
      * url
@@ -20,5 +21,9 @@ class Attachment extends Model
 
     public function supplier() {
         return $this->belongsTo(Supplier::class);
+    }
+
+    public function company() {
+        return $this->belongsTo(Company::class);
     }
 }

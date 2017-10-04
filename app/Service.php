@@ -10,6 +10,7 @@ class Service extends Model
     /*
      * Available attributes:
      *
+     * company_id
      * type
      * description
      * supplier_id
@@ -20,5 +21,9 @@ class Service extends Model
 
     public function supplier() {
         return $this->belongsTo(Supplier::class);
+    }
+
+    public function company() {
+        return $this->belongsTo(Company::class);
     }
 }

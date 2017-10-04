@@ -10,6 +10,7 @@ class DeliverToAddress extends Model
     /*
      * Available attributes:
      *
+     * company_id
      * name
      * address
      * city
@@ -20,4 +21,8 @@ class DeliverToAddress extends Model
      */
 
     use SoftDeletes;
+
+    public function company() {
+        return $this->belongsTo(Company::class);
+    }
 }

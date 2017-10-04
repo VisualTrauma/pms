@@ -10,6 +10,7 @@ class Trade extends Model
     /*
      * Available attributes:
      *
+     * company_id
      * type
      * added_by
      */
@@ -22,5 +23,9 @@ class Trade extends Model
 
     public function workOrders() {
         return $this->hasMany(WorkOrder::class);
+    }
+
+    public function company() {
+        return $this->belongsTo(Company::class);
     }
 }

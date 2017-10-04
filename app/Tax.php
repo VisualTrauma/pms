@@ -10,9 +10,14 @@ class Tax extends Model
     /*
      * Available attributes:
      *
+     * company_id
      * percentage
      * added_by
      */
 
     use SoftDeletes;
+
+    public function company() {
+        return $this->belongsTo(Company::class);
+    }
 }

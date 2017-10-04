@@ -10,6 +10,7 @@ class AssetCategory extends Model
     /*
      * Available attributes:
      *
+     * company_id
      * code
      * description
      * added_by
@@ -18,4 +19,8 @@ class AssetCategory extends Model
     use SoftDeletes;
 
     protected $table = "asset_categories";
+
+    public function company() {
+        return $this->belongsTo(Company::class);
+    }
 }

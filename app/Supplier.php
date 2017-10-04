@@ -10,6 +10,7 @@ class Supplier extends Model
     /*
      * Available attributes:
      *
+     * company_id
      * code
      * name
      * province
@@ -31,5 +32,9 @@ class Supplier extends Model
 
     public function contactDetails() {
         return $this->hasMany(ContactDetail::class);
+    }
+
+    public function company() {
+        return $this->belongsTo(Company::class);
     }
 }
